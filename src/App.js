@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import {DebtorsForm} from "./ui/components/DebtorsForm.js";
+import {DebtorsList} from "./ui/components/DebtorsList.js";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [debtors, setDebtors] = useState([])
+    return (
+        <div className="app">
+            <h1 className="title">Должники</h1>
+            <DebtorsForm setDebtors={ setDebtors } />
+            <DebtorsList debtors={ debtors } setDebtors={ setDebtors } />
+        </div>
+    );
 }
 
 export default App;
