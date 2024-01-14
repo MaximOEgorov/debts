@@ -1,6 +1,9 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
+import {DebtorsContext} from "./DebtorsContext.js";
 
-export const DebtorsList = ({debtors, setDebtors}) => {
+export const DebtorsList = () => {
+    const {debtors, setDebtors} = useContext(DebtorsContext);
+
     return (
         <ul className="debtorList">
             {debtors.map((debtor, i) => (

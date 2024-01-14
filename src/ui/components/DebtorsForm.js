@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
+import {DebtorsContext} from "./DebtorsContext.js";
 
-export const DebtorsForm = ({setDebtors}) => {
+export const DebtorsForm = () => {
     const [name, setName] = useState('');
     const [debt, setDebt] = useState('');
+    const {debtors, setDebtors} = useContext(DebtorsContext);
     return (
         <div className="form">
             <input
